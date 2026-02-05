@@ -8,25 +8,36 @@ import { Tabs } from '../components/ui/Tabs';
 import { EvidenceSummaryCard } from '../components/dashboard/EvidenceSummaryCard';
 import { OverviewContent } from '../components/dashboard/OverviewContent';
 import { LeadersSection } from '../components/dashboard/LeadersSection';
+import { EvidenceTabContent } from '../components/dashboard/EvidenceTabContent';
 import { perspectiveDetailData } from '../data/perspectives';
 
 export function Perspectives() {
   const [activeTab, setActiveTab] = useState('overview');
   const data = perspectiveDetailData;
+  const documents = data.evidenceDocuments ?? [];
+  const comments = data.evidenceComments ?? [];
+  const activities = data.evidenceActivities ?? [];
 
   const tabs = [
     {
       id: 'overview',
       label: 'Overview',
-      content: <OverviewContent sections={data.overviewSections} />,
+      content: (
+        <div className="space-y-6">
+          <OverviewContent sections={data.overviewSections} />
+          <LeadersSection leaders={data.leaders} />
+        </div>
+      ),
     },
     {
       id: 'evidence',
       label: 'Evidence',
       content: (
-        <div className="rounded-lg border border-gray-100 bg-gray-50 px-4 py-8 text-center text-sm text-gray-500">
-          Evidence documents and uploads will appear here.
-        </div>
+        <EvidenceTabContent
+          documents={documents}
+          comments={comments}
+          activities={activities}
+        />
       ),
     },
   ];
@@ -63,8 +74,6 @@ export function Perspectives() {
       </section>
 
       <Tabs tabs={tabs} activeId={activeTab} onTabChange={setActiveTab} />
-
-      <LeadersSection leaders={data.leaders} />
     </div>
   );
 }

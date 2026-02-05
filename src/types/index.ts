@@ -80,6 +80,26 @@ export interface PerspectiveDetailLeader {
   avatarUrl?: string;
 }
 
+export type DocumentStatus = 'approved' | 'pending_review';
+
+export interface EvidenceDocument {
+  id: string;
+  documentNumber: string;
+  documentName: string;
+  documentLead: string;
+  documentPreparer: string;
+  date: string;
+  dueDate: string;
+  status: DocumentStatus;
+}
+
+export interface EvidenceComment {
+  id: string;
+  authorName: string;
+  date: string;
+  text: string;
+}
+
 export interface PerspectiveDetail {
   id: string;
   title: string;
@@ -89,4 +109,7 @@ export interface PerspectiveDetail {
   evidence: EvidenceSummary;
   overviewSections: OverviewSection[];
   leaders: PerspectiveDetailLeader[];
+  evidenceDocuments?: EvidenceDocument[];
+  evidenceComments?: EvidenceComment[];
+  evidenceActivities?: RecentActivity[];
 }
