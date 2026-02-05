@@ -131,6 +131,23 @@ export function IconChevron({ className = '', size = defaultSize }: IconProps) {
   );
 }
 
+export function IconSend({ className = '', size = defaultSize }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
+      <line x1="22" y1="2" x2="11" y2="13" />
+      <polygon points="22 2 15 22 11 13 2 9 22 2" />
+    </svg>
+  );
+}
+
+export function IconChevronUpDown({ className = '', size = defaultSize }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
+      <polyline points="7 15 12 9 17 15" />
+    </svg>
+  );
+}
+
 export function IconCollapse({ className = '', size = defaultSize }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
