@@ -13,7 +13,8 @@ The goal of this project is to demonstrate the ability to translate complex dash
 - TypeScript
 - Vite
 - ESLint
-- (UI styling and chart libraries will be added as the implementation progresses)
+- Tailwind CSS for styling
+- Recharts for data visualizations
 
 ---
 
@@ -35,3 +36,27 @@ npm install
 ```bash
 npm run dev
 ```
+
+## Live Demo
+
+https://audit-dashboard-frontend.vercel.app
+
+## Implementation Approach
+
+- Component-driven architecture with reusable UI primitives
+- Clear separation between layout, feature components, and shared UI
+- Static mock data used to simulate backend responses
+- Focus on maintainability, readability, and scalability
+
+## Assumptions
+
+- Backend APIs are not available
+- Data structures represent realistic backend responses
+- Desktop-first responsive layout
+
+## Improvements With More Time
+
+- Accessibility enhancements (ARIA roles, keyboard navigation)
+- Unit and integration tests
+- Improved mobile responsiveness
+- Loading and empty states
