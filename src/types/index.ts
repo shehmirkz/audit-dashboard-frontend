@@ -59,3 +59,34 @@ export interface MonthlyDataPoint {
   month: string;
   value: number;
 }
+
+export interface EvidenceSummary {
+  total: number;
+  underReview: number;
+  inProgress: number;
+  completed: number;
+}
+
+export interface OverviewSection {
+  id: string;
+  label: string;
+  content: string | string[];
+}
+
+export interface PerspectiveDetailLeader {
+  id: string;
+  name: string;
+  perspective: string;
+  avatarUrl?: string;
+}
+
+export interface PerspectiveDetail {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  progress: number;
+  evidence: EvidenceSummary;
+  overviewSections: OverviewSection[];
+  leaders: PerspectiveDetailLeader[];
+}
