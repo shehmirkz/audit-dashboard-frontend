@@ -2,6 +2,9 @@ import type {
   TimelineMilestone,
   StatCardItem,
   CategoryProgress,
+  PerspectiveLeader,
+  RecentActivity,
+  MonthlyDataPoint,
 } from '../types';
 
 export const timelineData: TimelineMilestone[] = [
@@ -297,3 +300,46 @@ export const progressStatusData: CategoryProgress[] = [
     ],
   },
 ];
+
+export const complianceScore = {
+  value: 65,
+  subtitle: 'Basic Standards 2025',
+  color: '#ef4444',
+};
+
+export const topLeadersData: PerspectiveLeader[] = [
+  { id: '1', name: 'Ahmed Al-Ali', perspective: 'Strategy Perspective', score: 96 },
+  { id: '2', name: 'Sarah Al-Khaled', perspective: 'Beneficiary Perspective', score: 94 },
+  { id: '3', name: 'Mohammad Al-Mansour', perspective: 'IT Perspective', score: 92 },
+];
+
+export const recentActivitiesData: RecentActivity[] = [
+  { id: '1', description: 'Document "Strategy_Review.Pdf" Was Uploaded By Ahmed Khaled', timeAgo: '5 Mins Ago' },
+  { id: '2', description: 'Task "Review Compliance Files" Was Assigned To Mona Hamed', timeAgo: '20 Mins Ago' },
+  { id: '3', description: 'New Criterion "5.3 Digital Identity" Was Created By Admin', timeAgo: '1 Hour Ago' },
+];
+
+export const monthlyPerformanceData: MonthlyDataPoint[] = [
+  { month: 'Jan', value: 85 },
+  { month: 'Feb', value: 78 },
+  { month: 'Mar', value: 82 },
+  { month: 'Apr', value: 65 },
+  { month: 'May', value: 88 },
+  { month: 'Jun', value: 72 },
+  { month: 'Jul', value: 68 },
+  { month: 'Aug', value: 80 },
+  { month: 'Sep', value: 84 },
+  { month: 'Oct', value: 79 },
+  { month: 'Nov', value: 86 },
+  { month: 'Dec', value: 90 },
+];
+
+export const auditReadinessData = {
+  value: 80,
+  subtitle: 'Readiness Level',
+  color: '#22c55e',
+  metrics: [
+    { value: 12, label: 'Overdue Stds' },
+    { value: 5, label: 'Missing Evidence' },
+  ],
+};

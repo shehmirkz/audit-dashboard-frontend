@@ -40,3 +40,22 @@ export interface NavItemConfig {
   path: string;
   icon: string;
 }
+
+export interface PerspectiveLeader {
+  id: string;
+  name: string;
+  perspective: string;
+  score: number;
+  avatarUrl?: string;
+}
+
+export interface RecentActivity {
+  id: string;
+  description: string;
+  timeAgo: string;
+}
+
+export interface MonthlyDataPoint {
+  month: string;
+  value: number;
+}
