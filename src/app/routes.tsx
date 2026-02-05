@@ -1,7 +1,8 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { PageLayout } from '../components/layout/PageLayout';
-import { Dashboard } from '../pages/Dashboard';
+import { Dashboard } from '../pages/Dashboard.tsx';
+import { Perspectives } from '../pages/Perspectives.tsx';
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
     path: '/perspectives',
     element: (
       <PageLayout>
-        <div className="p-6 text-gray-600">Perspectives – Coming soon</div>
+        <Perspectives />
       </PageLayout>
     ),
   },
