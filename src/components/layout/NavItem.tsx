@@ -24,21 +24,26 @@ const iconMap: Record<string, ComponentType<{ className?: string; size?: number 
 
 interface NavItemProps {
   item: NavItemConfig;
+  collapsed?: boolean;
 }
 
-export function NavItem({ item }: NavItemProps) {
+export function NavItem({ item, collapsed = false }: NavItemProps) {
   const Icon = iconMap[item.icon] ?? IconDashboard;
 
   return (
     <NavLink
       to={item.path}
+      title={collapsed ? item.label : undefined}
       className={({ isActive }) =>
-        `flex items-center gap-3 px-3 py-2.5 rounded-lg text-white/90 transition-colors ${isActive ? 'bg-blue-500/30 text-white' : 'hover:bg-white/10'
-        }`
+        `flex items-center rounded-lg text-white/90 transition-colors ${
+          collapsed ? 'justify-center px-0 py-2.5' : 'gap-3 px-3 py-2.5'
+        } ${isActive ? 'bg-blue-500/30 text-white' : 'hover:bg-white/10'}`
       }
     >
       <Icon size={20} className="flex-shrink-0" />
-      <span className="text-sm font-medium">{item.label}</span>
+      {!collapsed && (
+        <span className="text-sm font-medium">{item.label}</span>
+      )}
     </NavLink>
   );
 }
