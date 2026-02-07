@@ -18,7 +18,7 @@ export function GaugeChart({ value, color, size = 120 }: GaugeChartProps) {
   const pathD = `M ${endX} ${y} A ${radius} ${radius} 0 0 0 ${startX} ${y}`;
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center pt-4">
       <svg width={size} height={size / 2 + strokeWidth} className="overflow-visible">
         <path
           d={pathD}

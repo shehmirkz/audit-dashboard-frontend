@@ -14,7 +14,7 @@ export function ComplianceScoreCard({
 }: ComplianceScoreCardProps) {
   return (
     <Card>
-      <h3 className="mb-5 text-sm font-bold text-gray-800">
+      <h3 className="mb-5 text-sm font-bold text-gray-800 p-3">
         Overall Compliance Score
       </h3>
       <GaugeChart value={value} color={color} size={140} />

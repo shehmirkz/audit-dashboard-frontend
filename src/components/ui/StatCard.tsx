@@ -18,20 +18,23 @@ interface StatCardProps {
   item: StatCardItemType;
 }
 
+const ICON_COLOR = '#DB1F26';
+
 export function StatCard({ item }: StatCardProps) {
   const Icon = item.icon ? iconMap[item.icon] : null;
-  const iconClass = item.highlight
-    ? 'text-[var(--color-accent)]'
-    : 'text-[var(--color-muted)]';
 
   return (
-    <Card className="flex flex-row items-start justify-between gap-2">
+    <Card className="flex h-[80px] w-[180px] flex-row items-start justify-between gap-2 rounded-[10px] border border-[#E0E8ED] bg-[#FFFFFF] p-3 shadow-none">
       <div className="min-w-0">
-        <p className="text-2xl font-bold text-gray-900 truncate">{item.value}</p>
-        <p className="text-sm text-gray-600 mt-0.5">{item.label}</p>
+        <p className="truncate text-[24px] font-bold leading-4 text-[#1D3557]">
+          {item.value}
+        </p>
+        <p className="mt-2.5 text-[12px] font-normal leading-4 text-[#8597A8]">
+          {item.label}
+        </p>
       </div>
       {Icon && (
-        <div className={`flex-shrink-0 ${iconClass}`}>
+        <div className="flex-shrink-0" style={{ color: ICON_COLOR }}>
           <Icon size={24} />
         </div>
       )}

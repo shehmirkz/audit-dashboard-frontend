@@ -8,7 +8,7 @@ interface CategoryProgressCardProps {
 
 export function CategoryProgressCard({ category }: CategoryProgressCardProps) {
   return (
-    <div className="flex flex-col gap-3 min-w-[100px]">
+    <div className="flex flex-col gap-3 w-[98px]">
       <CategoryHeader title={category.title} percentage={category.percentage} />
       <div className="flex flex-col gap-2 h-full">
         {category.items.map((item) => (
